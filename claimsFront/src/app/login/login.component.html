@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <div class="card">
+        <h1>LOGIN</h1>
+    <form (ngSubmit)= "onSubmit()">
+        <div class="form-group" >
+            <label>Email</label>
+            <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"
+                id="email" class="form-control" placeholder="Enter Email">      
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"
+                id="password" class="form-control" placeholder="Enter Password">      
+        </div>
+   
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    </div>
+</div>

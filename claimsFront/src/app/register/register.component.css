@@ -1,0 +1,36 @@
+.card {
+    background-color:  rgb(226, 226, 222);
+    padding: 25px 45px;
+    margin: auto;
+  }
+
+  .container.mt-4 {
+    margin: auto;
+    width: 500px;
+    border: none;
+    
+    
+    align-items: center;
+}
+.btn.btn-primary {
+    display: block;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    margin: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    width: 100%
+  }
+
+  .form-group {
+    padding-bottom: 15px;
+  }
+
+  .error
+  {
+    color:red;
+    font-size: 80%;
+  }

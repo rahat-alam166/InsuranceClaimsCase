@@ -2,8 +2,10 @@ package com.genspark.claims.controller;
 
 
 import com.genspark.claims.model.Claims;
+import com.genspark.claims.model.LoginResponse;
 import com.genspark.claims.model.User;
 import com.genspark.claims.model.dto.ClaimsDTO;
+import com.genspark.claims.model.dto.LoginDTO;
 import com.genspark.claims.model.dto.UserDTO;
 import com.genspark.claims.service.ClaimsService;
 import com.genspark.claims.service.UserService;
@@ -26,6 +28,13 @@ public class UserController {
       this.claimsService = claimsService;
    }
 
+   @PostMapping(path="/login")
+   public ResponseEntity<?> loginUser(@RequestBody LoginDTO loginDTO) {
+      LoginResponse loginResponse = userService.loginUser(loginDTO);
+      return ResponseEntity.ok(loginResponse);
+   }
+
+
    @GetMapping("/all")
    public ResponseEntity<List<UserDTO>> getAllUsers() {
       List<User> users = userService.findAllUsers();
@@ -46,6 +55,10 @@ public class UserController {
       User user = userService.findUserById(id);
       return new ResponseEntity<>(UserDTO.from(user), HttpStatus.OK);
    }
+//   @PostMapping("/NULL")
+//   public ResponseEntity<UserDTO> getNULL () {
+//      return new ResponseEntity<>(null, HttpStatus.OK);
+//   }
 
    @PostMapping("/add")
    public ResponseEntity<UserDTO> addUser(@RequestBody UserDTO user) {
