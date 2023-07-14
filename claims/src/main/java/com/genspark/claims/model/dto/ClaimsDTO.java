@@ -2,12 +2,16 @@ package com.genspark.claims.model.dto;
 import com.genspark.claims.model.Claims;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.Objects;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClaimsDTO
 {
    private Long id;

@@ -35,9 +35,9 @@ public class ClaimsController {
 
    @GetMapping("claims/all")
    public ResponseEntity<List<ClaimsDTO>> getAllClaims() {
-      List<Claims> restaurants = claimsService.findAllClaims();
-      List<ClaimsDTO> restaurantDTOS = restaurants.stream().map(ClaimsDTO::from).collect(Collectors.toList());
-      return new ResponseEntity<>(restaurantDTOS, HttpStatus.OK);
+      List<Claims> claim = claimsService.findAllClaims();
+      List<ClaimsDTO> claimsDTOS = claim.stream().map(ClaimsDTO::from).collect(Collectors.toList());
+      return new ResponseEntity<>(claimsDTOS, HttpStatus.OK);
    }
 //    public ResponseEntity<List<Claims>> getAllClaims() {
 //        List<Claims> restaurants = restaurantService.findAllClaims();
@@ -67,8 +67,8 @@ public class ClaimsController {
 //    }
 
    @PutMapping("claims/update")
-   public ResponseEntity<ClaimsDTO> updateClaims(@RequestBody ClaimsDTO restaurant) {
-      Claims updateClaims = claimsService.updateClaims(Claims.from(restaurant));
+   public ResponseEntity<ClaimsDTO> updateClaims(@RequestBody ClaimsDTO claim) {
+      Claims updateClaims = claimsService.updateClaims(Claims.from(claim));
       return new ResponseEntity<>(ClaimsDTO.from(updateClaims), HttpStatus.OK);
    }
 //    public ResponseEntity<Claims> updateClaims(@RequestBody Claims restaurant) {

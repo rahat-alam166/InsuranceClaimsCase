@@ -1,0 +1,56 @@
+.card {
+    background-color:  rgb(195, 195, 30);
+    padding: 25px 45px;
+    margin: auto;
+    align-items: center;
+  }
+
+  .container.mt-4 {
+    margin: auto;
+    width: 500px;
+    border: none;
+    
+    
+    align-items: center;
+}
+.btn.btn-primary {
+    display: block;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    width: 100%
+  }
+
+  .form-group {
+    padding-bottom: 5px;
+  }
+
+  .error
+  {
+    color:red;
+    font-size: 80%;
+  }
+
+  .divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;   
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}

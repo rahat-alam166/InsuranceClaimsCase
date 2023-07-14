@@ -1,0 +1,41 @@
+<!-- <div>
+  <div class="navigation-bar">
+    <nav>
+      <div class="left-side">
+        <div class="nav-btn">
+          <a routerLink="/addClaim" routerLinkActive=" active">Add Claim</a>
+        </div>
+        <div class="nav-btn">
+          <a routerLink="/claim" routerLinkActive=" active">Claims</a>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="nav-btn">
+          <a routerLink="/logout" routerLinkActive=" active">Logout</a>
+        </div>
+      </div>
+
+    </nav>
+  </div>
+
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="isLoggedIn()">
+  <div class="container-fluid">
+    <a class="navbar-brand" > <img src="/assets/logocar.png" alt="" width="100" height="50"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a *ngIf="!isAdmin()" class="nav-link active" aria-current="page" routerLink="/claim">Claim</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!isAdmin()" class="nav-link active" routerLink="/addClaim">AddClaim</a>
+        </li>
+      </ul>
+      <a class="nav-link active" aria-current="page" (click)="logout()" routerLink="">Logout</a>
+    </div>
+  </div>
+</nav>

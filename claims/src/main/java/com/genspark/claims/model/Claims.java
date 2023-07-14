@@ -1,13 +1,17 @@
 package com.genspark.claims.model;
 import com.genspark.claims.model.dto.ClaimsDTO;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Claims implements Serializable {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +30,7 @@ public class Claims implements Serializable {
    public static Claims from(ClaimsDTO claimsDTO)
    {
       Claims claim = new Claims();
+      claim.setId(claimsDTO.getId());
       claim.setDescription(claimsDTO.getDescription());
       claim.setStatus(claimsDTO.getStatus());
       claim.setDate(claimsDTO.getDate());

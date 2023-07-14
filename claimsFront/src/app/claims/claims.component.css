@@ -1,0 +1,15 @@
+.modal-title
+{
+    font-weight: bold;
+    font-size: 150%;
+}
+ng-template #closed
+{
+    color: red;
+}
+
+.bOptions
+{
+    text-align: right;
+    word-spacing: 50px;
+}

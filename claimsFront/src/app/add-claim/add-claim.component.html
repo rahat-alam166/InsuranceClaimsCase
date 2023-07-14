@@ -1,0 +1,58 @@
+
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<!------ Include the above in your HEAD tag ---------->
+
+
+
+<div class="container">
+    <br>
+    <hr>
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Submit Claim</h4>
+            <p class="divider-text">
+                <span class="bg-light"></span>
+            </p>
+            <form #addCourse="ngForm" class="common-form" (ngSubmit)="submit(addCourse.value); addCourse.resetForm()">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <!-- <span class="input-group-text"> <i class="fa fa-clock"></i> </span> -->
+                    </div>
+                    <!-- <input type="text" required class="form-control" placeholder="Enter Date" name="date" ngModel /> -->
+                    <mat-form-field appearance="fill">
+                        <input matInput required [matDatepicker]="picker" name="date" ngModel >
+                        <mat-hint>YYYY/MM/DD</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-car"></i> </span>
+                    </div>
+                    <input type="text" required class="form-control" placeholder="Enter car" name="support" ngModel />
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-info"></i> </span>
+                    </div>
+                    <textarea type="textarea" rows="8" required class="form-control" placeholder="Enter Description" name="description" ngModel >
+                    </textarea>
+
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" [disabled]="!addCourse.valid">Save</button>
+
+                </div> <!-- form-group// -->
+                        </form>
+        </article>
+    </div> <!-- card.// -->
+
+</div>
+<!--container end.//-->
+
+

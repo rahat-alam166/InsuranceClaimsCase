@@ -2,7 +2,9 @@
     background-color:  rgb(195, 195, 30);
     padding: 25px 45px;
     margin: auto;
+    
     align-items: center;
+    
   }
 
   .container.mt-4 {
@@ -18,14 +20,11 @@
     background: #000;
     color: #fff;
     border: none;
-    padding: 10px 10px;
-    margin: 3px;
     cursor: pointer;
     text-decoration: none;
     font-size: 15px;
     width: 100%
   }
-
   .form-group {
     padding-bottom: 5px;
   }

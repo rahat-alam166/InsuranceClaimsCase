@@ -43,7 +43,7 @@ public class UserController {
    }
 
    @GetMapping("/all/claims/{id}")
-   public ResponseEntity<List<ClaimsDTO>> getAllPlates(@PathVariable("id") Long id) {
+   public ResponseEntity<List<ClaimsDTO>> getAllClaims(@PathVariable("id") Long id) {
       List<Claims> claims = userService.findAllClaims(id);
       List<ClaimsDTO> claimsDTOS = claims.stream().map(ClaimsDTO::from).collect(Collectors.toList());
       return new ResponseEntity<>(claimsDTOS, HttpStatus.OK);

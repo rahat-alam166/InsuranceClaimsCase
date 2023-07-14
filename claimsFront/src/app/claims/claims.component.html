@@ -1,0 +1,84 @@
+<div class="container-fluid" id="main-container">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Date</th>
+        <th scope="col">Claim Status</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let claim of claims" >
+        <th scope="row">{{claim?.id}}</th>
+        <td>
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          {{claim?.date}}</td>
+        <td>
+          <!-- <i *ngIf='claim?.status === "IN PROGRESS"' class="fa-solid fa-clock"></i>
+          {{claim?.status}}   -->
+          <div *ngIf='claim?.status === "IN PROGRESS"'>
+            <i class="fa-solid fa-clock"></i>
+            <span style="font-weight: bold;"> {{claim?.status}}</span>
+          </div>
+          <div *ngIf='claim?.status === "APPROVED"'>
+            <i class="fa-solid fa-check" style="color: green;"></i>
+            <span style="color:green; font-weight: bold;"> {{claim?.status}}</span>
+          </div>
+          <div *ngIf='claim?.status === "DENIED"'>
+            <i class="fa-solid fa-xmark" style="color: red;"></i>
+            <span style="color:red; font-weight: bold;"> {{claim?.status}}</span>
+          </div>
+        </td>
+        <td class="bOptions">
+          <a (click)="onOpenModal(claim)" class="btn btn-outline-dark tooltips" data-bs-toggle="modal" data-bs-target="#myModal" data-placement="top" data-original-title="Edit"><i class="fa fa-eye"></i> </a>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">{{editClaim?.date}}</h4>
+        <button type="button" (click)="onCloseModal()" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        {{editClaim?.description}}
+
+      </div>
+
+      <!-- Modal footer -->
+
+      <div class="modal-footer justify-content-lg-between">
+        <div class="m-status" *ngIf='editClaim?.status === "IN PROGRESS"'>
+          <i class="fa-solid fa-clock"></i>
+          <span style="font-weight: bold;"> {{editClaim?.status}}</span>
+        </div>
+        <div class="m-status" *ngIf='editClaim?.status === "APPROVED"'>
+          <i class="fa-solid fa-check" style="color: green;"></i>
+          <span style="color:green; font-weight: bold;"> {{editClaim?.status}}</span>
+        </div>
+        <div class="m-status" *ngIf='editClaim?.status === "DENIED"'>
+          <i class="fa-solid fa-xmark" style="color: red;"></i>
+          <span style="color:red; font-weight: bold;"> {{editClaim?.status}}</span>
+        </div>
+        <span style="color:green; font-weight: bold;" *ngIf="editClaim?.open; else closed">OPEN</span>
+        <ng-template #closed><span style="color:red; font-weight: bold;">CLOSED</span></ng-template>
+
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
