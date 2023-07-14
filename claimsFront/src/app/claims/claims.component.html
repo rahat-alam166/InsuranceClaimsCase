@@ -16,8 +16,6 @@
           <i class="fa fa-calendar" aria-hidden="true"></i>
           {{claim?.date}}</td>
         <td>
-          <!-- <i *ngIf='claim?.status === "IN PROGRESS"' class="fa-solid fa-clock"></i>
-          {{claim?.status}}   -->
           <div *ngIf='claim?.status === "IN PROGRESS"'>
             <i class="fa-solid fa-clock"></i>
             <span style="font-weight: bold;"> {{claim?.status}}</span>

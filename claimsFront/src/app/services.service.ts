@@ -26,7 +26,6 @@ export class ServicesService {
   getRegistered(user: User): Observable<any> {
     console.log(user);
     return this.http.post(`${this.apiUrl}/user/add`, user, { responseType: 'text' });
-    //return this.http.post(`${this.apiUrl}/user/NULL`, user, { responseType: 'text' });
   }
 
   addClaim(data:AddClaim): Observable<any> {
@@ -37,9 +36,7 @@ export class ServicesService {
   getLoginStatus(loginData: LoginInfo) {
     console.log(loginData);
 
-    //return this.http.post(`${this.apiUrl}/api/v1/login/log`, loginData);
     this.http.post(`${this.apiUrl}/user/login`, loginData).subscribe((resultData: any) => {
-      //console.log(resultData);
 
 
       if (resultData.message == "Login Success") {
@@ -47,10 +44,6 @@ export class ServicesService {
         this.name = resultData.fullName;
         this.role = resultData.role;
         this.isLoggedIn = true;
-        //console.log(this.isLoggedIn +  "   hgsadjhgshdjfgh");
-        /*console.log(resultData.fullName);
-        console.log(resultData.id);
-        console.log(resultData.role);*/
         console.log(resultData);
         console.log(this.id);
         if (resultData.role == "ADMIN")
@@ -64,7 +57,7 @@ export class ServicesService {
         
       }
       else {
-        alert(resultData.message); //Temp for testing
+        alert("Invalid Login"); 
       }
     });
   }
@@ -81,10 +74,6 @@ export class ServicesService {
     return this.http.put<Claim>(`${this.apiUrl}/claims/update`, claim);
   }
 
-  //Implement specific claims ID functionality
-  // public getClaimsById(): Observable<any>{
-  //   return this.http.get<any>(`${this.apiUrl}/claims/all`);
-  // }
 
   logout() {
     this.id = undefined;

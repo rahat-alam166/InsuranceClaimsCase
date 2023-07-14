@@ -35,7 +35,6 @@ export class RegisterComponent {
     alert("Registered Succesfully");
     this.router.navigateByUrl('/login');
     console.log(resultData);
-    //Navigate to login
 
   }
 

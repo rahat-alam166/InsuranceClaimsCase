@@ -45,14 +45,3 @@ export class ClaimsComponent implements OnInit{
   }
 }
 
-// public onUpdateRestaurant(restaurant: Restaurant): void {
-//   this.restaurantService.updateRestaurant(restaurant).subscribe(
-//     (response: Restaurant) => {
-//       console.log(response);
-//       this.getRestaurants();
-//     },
-//     (error: HttpErrorResponse) => {
-//       alert(error.message);
-//     }
-//   );
-// }

@@ -12,7 +12,6 @@ export class AddClaimComponent {
   constructor(private service: ServicesService, private router: Router){}
 
   submit(data: AddClaim){
-    // data.date = data.date.d;
     data.date = new Date(data.date);
 
     data.status = "IN PROGRESS";

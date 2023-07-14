@@ -15,24 +15,4 @@ public class SecurityConfiguration {
    @Bean
    public PasswordEncoder passwordEncoder(){return new BCryptPasswordEncoder();}
 
-//   @Bean
-//   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-//
-//      http.cors((cors) -> cors.disable());
-//      http.cors(Customizer.withDefaults());
-//      http.csrf((csrf) -> csrf.disable());
-//      http.authorizeHttpRequests(requests-> requests
-//                      .requestMatchers("/authentication")
-//                      .hasAuthority("ADMIN")
-//                      .requestMatchers("restaurant/all")
-//                      .permitAll()
-//                      .requestMatchers("admin/add")
-//                      .permitAll()
-//                      .anyRequest().permitAll()
-//              )
-//              .httpBasic(Customizer.withDefaults())
-//              .formLogin(Customizer.withDefaults());
-//
-//      return http.build();
-//   }
 }
